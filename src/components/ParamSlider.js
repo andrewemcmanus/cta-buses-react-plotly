@@ -4,12 +4,11 @@ import { useState } from "react";
 import Plots from "./Plots";
 
 export default function ParamSlider({ boardings, alightings, latitudes, longitudes }) {
-    const [ scale, setScale ] = useState(0.1);
+    const [ scale, setScale ] = useState(0.02);
     return (
         <div>
-            <Slider min={1} max={15} onChange={(e) => {
-                setScale( e / 20 );
-                console.log(scale);
+            <Slider min={1} max={10} onChange={(e) => {
+                setScale( e / 50 );
             }} />
             <Plots boardings={boardings.map((i) => (i * scale))} alightings={alightings.map((i) => (i * scale))} latitudes={latitudes} longitudes={longitudes} />
         </div>
