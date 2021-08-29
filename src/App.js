@@ -4,7 +4,6 @@ import GetBusData from './scripts/getData';
 
 function App() {
   const busData = GetBusData();
-  console.log(busData);
   return (
     <div className="App">
       <header className="App-header">
